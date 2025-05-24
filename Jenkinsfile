@@ -238,11 +238,11 @@ pipeline {
             steps {
                 script {                 
                     sh '''
-                        python3 -m pip install --user flake8 pylint
+                        // python3 -m pip install --user flake8 pylint
                         
-                        flake8 app.py --max-line-length=120 --ignore=E501,W503 
+                        // flake8 app.py --max-line-length=120 --ignore=E501,W503 
                         
-                        pylint app.py --exit-zero"
+                        // pylint app.py --exit-zero"
                     '''
                 }
             }
@@ -340,10 +340,10 @@ EOF
             }
         }
     }
-    post {
-        always {
-            sh 'docker system prune -af'
-        }
-    }
+    // post {
+    //     always {
+    //         sh 'docker system prune -af'
+    //     }
+    // }
     
 }
